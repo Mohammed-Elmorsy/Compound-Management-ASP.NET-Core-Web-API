@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TeamsPlayersTaskWebAPI_MohammedElmorsy
+namespace VisitsTaskWebAPI_MohammedElmorsy
 {
     public class Program
     {

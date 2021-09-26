@@ -4,10 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TeamsPlayersTaskWebAPI_MohammedElmorsy.Models;
-using TeamsPlayersTaskWebAPI_MohammedElmorsy.Repositories;
+using VisitsTaskWebAPI_MohammedElmorsy.Models;
+using VisitsTaskWebAPI_MohammedElmorsy.Repositories;
 
-namespace TeamsPlayersTaskWebAPI_MohammedElmorsy.Controllers
+namespace VisitsTaskWebAPI_MohammedElmorsy.Controllers
 {
     [Authorize]
     [Route("api/[controller]/[action]")]
@@ -61,6 +61,16 @@ namespace TeamsPlayersTaskWebAPI_MohammedElmorsy.Controllers
             }
 
             return BadRequest("couldn't delete user token");
+        }
+
+        [HttpPost]
+        public IActionResult SendEmail(Visitor visitor)
+        {
+            if (userRepository.SendEmailToVisitor(visitor))
+                return Ok(new { message = "email sent successfully" });
+
+            return BadRequest("couldn't send email");
+
         }
 
 

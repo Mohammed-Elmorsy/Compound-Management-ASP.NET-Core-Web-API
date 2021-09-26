@@ -14,11 +14,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TeamsPlayersTaskWebAPI_MohammedElmorsy.Helpers;
-using TeamsPlayersTaskWebAPI_MohammedElmorsy.Models;
-using TeamsPlayersTaskWebAPI_MohammedElmorsy.Repositories;
+using VisitsTaskWebAPI_MohammedElmorsy.Helpers;
+using VisitsTaskWebAPI_MohammedElmorsy.Models;
+using VisitsTaskWebAPI_MohammedElmorsy.Repositories;
 
-namespace TeamsPlayersTaskWebAPI_MohammedElmorsy
+namespace VisitsTaskWebAPI_MohammedElmorsy
 {
     public class Startup
     {
@@ -33,10 +33,10 @@ namespace TeamsPlayersTaskWebAPI_MohammedElmorsy
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TeamsDBContext>(options => options.UseSqlServer( Configuration.GetConnectionString("TeamsDBConnection") ) );
+            services.AddDbContext<CompoundDBContext>(options => options.UseSqlServer( Configuration.GetConnectionString("DBConnection") ) );
 
-            services.AddScoped<TeamRepository>();
-            services.AddScoped<PlayerRepository>();
+            services.AddScoped<VisitRepository>();
+            services.AddScoped<VisitorRepository>();
             services.AddScoped<UserRepository>();
 
             // configure strongly typed settings objects

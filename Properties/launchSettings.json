@@ -12,12 +12,13 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/teams",
+      "launchUrl": "api/visits",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SENDGRID_API_KEY": "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"
       }
     },
-    "TeamsPlayersTaskWebAPI_MohammedElmorsy": {
+    "VisitsTaskWebAPI_MohammedElmorsy": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/teams",

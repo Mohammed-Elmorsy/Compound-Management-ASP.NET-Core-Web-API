@@ -5,20 +5,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TeamsPlayersTaskWebAPI_MohammedElmorsy.Models
+namespace VisitsTaskWebAPI_MohammedElmorsy.Models
 {
     public enum Role
     {
-        User = 1,
-        Admin = 2
+        Admin = 1,
+        Owner = 2
     }
     public class User
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [DataType(DataType.Text)]
 
+        [DataType(DataType.Text)]
         [Required(AllowEmptyStrings = false, ErrorMessage = "The User name can not be empty")]
         [StringLength(20, MinimumLength = 2, ErrorMessage = "User Name field must have minimum 3 and maximum 15 character!")]
         public string UserName { get; set; }
@@ -43,5 +43,7 @@ namespace TeamsPlayersTaskWebAPI_MohammedElmorsy.Models
         public Role Role { get; set; }
 
         public string Token { get; set; }
+
+        public virtual List<Visit> Visits { get; set; }
     }
 }

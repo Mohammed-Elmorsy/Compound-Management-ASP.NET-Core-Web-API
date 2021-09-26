@@ -3,16 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TeamsPlayersTaskWebAPI_MohammedElmorsy.Models;
+using VisitsTaskWebAPI_MohammedElmorsy.Models;
 
-namespace TeamsPlayersTaskWebAPI_MohammedElmorsy.Repositories
+namespace VisitsTaskWebAPI_MohammedElmorsy.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private TeamsDBContext db;
+        private CompoundDBContext db;
         private DbSet<TEntity> set;
 
-        public Repository(TeamsDBContext _db)
+        public Repository(CompoundDBContext _db)
         {
             db = _db;
             set = db.Set<TEntity>();
